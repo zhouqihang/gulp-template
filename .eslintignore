@@ -1,0 +1,6 @@
+# ignore dist
+dist/*
+
+# ignore gulpfile
+gulpfile*.js
+build/*
