@@ -90,7 +90,13 @@ function tasks() {
                 noImplicitAny: true,
                 out: CONFIG.ts.filename
             }));
-        return tsResult.js.pipe(gulp.dest(CONFIG.ts.output));
+        return tsResult.js
+            .pipe(concat(CONFIG.ts.filename))
+            .pipe(gulp.dest(CONFIG.ts.output))
+            .pipe(rename({ suffix: CONFIG.js.suffix }))
+            .pipe(uglify())
+            .pipe(gulp.dest(CONFIG.js.output))
+            .pipe(notify({ message: 'TS文件处理完成' }));
     });
 
     // less处理任务
