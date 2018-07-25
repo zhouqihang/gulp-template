@@ -28,7 +28,7 @@ function dev() {
             }
         });
         gulp.watch(CONFIG.html.entry, ['html']).on('change', reload);
-        gulp.watch(CONFIG.js.entry, ['ts']).on('change', reload);
+        gulp.watch(CONFIG.ts.entry, ['ts']).on('change', reload);
         gulp.watch(CONFIG.lib.entry, ['lib']).on('change', reload);
         gulp.watch(CONFIG.image.entry, ['image']).on('change', reload);
         gulp.watch(CONFIG.less.entry, ['less']).on('change', reload);
