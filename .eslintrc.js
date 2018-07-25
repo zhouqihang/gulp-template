@@ -4,6 +4,10 @@ module.exports = {
         "browser": true,
         "node": true
     },
+    "globals": {
+        "$": true,
+        "jQuery": true,
+    },
     "rules": {
         "indent": ["error", 4]
     }

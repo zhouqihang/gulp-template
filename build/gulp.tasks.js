@@ -88,12 +88,14 @@ function tasks() {
         const tsResult = gulp.src(CONFIG.ts.entry)
             .pipe(ts({
                 noImplicitAny: true,
-                out: CONFIG.ts.filename
+                out: CONFIG.ts.filename,
+                target: 'es5',
+                lib: ['DOM', 'ES6'],
             }));
         return tsResult.js
             .pipe(concat(CONFIG.ts.filename))
             .pipe(gulp.dest(CONFIG.ts.output))
-            .pipe(rename({ suffix: CONFIG.js.suffix }))
+            .pipe(rename({ suffix: CONFIG.ts.suffix }))
             .pipe(uglify())
             .pipe(gulp.dest(CONFIG.js.output))
             .pipe(notify({ message: 'TS文件处理完成' }));
