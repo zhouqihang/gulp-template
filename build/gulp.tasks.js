@@ -76,6 +76,13 @@ function tasks() {
             .pipe(notify({ message: 'JS文件处理完成' }));
     });
 
+    // 第三方资源文件
+    gulp.task('lib', function () {
+        return gulp.src(CONFIG.lib.entry)
+            .pipe(gulp.dest(CONFIG.lib.output))
+            .pipe(notify({ message: 'LIB文件处理完成' }));
+    });
+
     // ts处理
     gulp.task('ts', function () {
         const tsResult = gulp.src(CONFIG.ts.entry)

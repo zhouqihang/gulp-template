@@ -24,6 +24,10 @@ module.exports = {
         entry: `${src}/images/*`,
         output: `${dist}/images`,
     },
+    lib: {
+        entry: `${src}/libs/*`,
+        output: `${dist}/libs`,
+    },
     less: {
         entry: `${src}/less/index.less`,
         output: `${dist}/css`,
